@@ -1,0 +1,46 @@
+#
+# Miscellaneous SN-specific devices
+#
+
+menu "CAN support"
+
+config CAN
+	tristate "CAN support"
+	---help---
+	Enable Controller Area Network (CAN)
+	
+#config CAN_CORE
+#	tristate "CAN core support"
+#	depends on NET
+#	---help---
+#	Controller Area Network (CAN) is a serial bus network used in
+#	industrial and automotive control and monitoring applications.
+
+#config CAN_DEBUG
+#	boolean "Debug support for CAN drivers"
+#	depends on CAN_CORE && DEBUG_KERNEL
+#	help
+#	Say "yes" to enable debug messaging (like dev_dbg and pr_debug),
+#	sysfs, and debugfs support in CAN controller drivers.
+
+#config CAN_MCP251X
+#	tristate "MCP251x CAN controller"
+#	depends on CAN_CORE
+#	depends on SPI
+#	help
+#	Support for Microchip MCP2510 and MCP2515 CAN controllers.
+
+#	To compile this driver as a module, choose M here: the
+#	module will be called mcp251x.
+
+config CAN_MCP2515
+	tristate "MCP2515 CAN Controller"
+	depends on SPI
+	depends on CAN
+	help
+	Support for Microchip MCP2510 and MCP2515 CAN controllers.
+
+	To compile this driver as a module, choose M here: the
+	module will be called mcp251x.
+	
+endmenu
